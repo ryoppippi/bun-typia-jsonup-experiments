@@ -1,0 +1,21 @@
+{
+  "name": "bun-typia-template",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun run ./build.ts",
+    "start": "bun run ./out/index.js",
+    "prepare": "ts-patch install && typia patch"
+  },
+  "devDependencies": {
+    "@ryoppippi/unplugin-typia": "npm:@jsr/ryoppippi__unplugin-typia",
+    "@types/bun": "latest",
+    "ts-patch": "^3.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "typia": "^6.0.6"
+  }
+}
