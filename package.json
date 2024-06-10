@@ -16,6 +16,7 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
+    "jsonup": "^0.1.2",
     "typia": "^6.0.6"
   }
 }

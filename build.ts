@@ -3,7 +3,7 @@ import UnpluginTypia from '@ryoppippi/unplugin-typia/bun';
 await Bun.build({
   entrypoints: ["./index.ts"],
   outdir: "./out",
-  minify: true,
+  minify: false,
   format: "esm",
   plugins: [
     UnpluginTypia({

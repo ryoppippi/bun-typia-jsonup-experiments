@@ -1,27 +1,15 @@
-import typia, { type tags } from "typia"
+import typia from "typia"
+import type { ObjectLike } from 'jsonup'
 
-/** define the schema of the member */
-interface IMember {
-  /**
-  * email of the member
-  */
-  email: string & tags.Format<"email">;
+const jsonSample = `{ "name": "jsonup" }`;
 
-  /**
-  * age of the member
-  * age should be greater than 19
-  */
-  age: number & tags.ExclusiveMinimum<19> & tags.Maximum<100>;
-}
+type Obj = ObjectLike<typeof jsonSample> // Type: `{ name: string }`
 
-/** dummy member */
-const member = {
-  email: 'example@example.com',
-  age: 25
-} as const satisfies IMember
+/* Create a type guard function */
+const is = typia.createIs<Obj>();
 
-console.log({ member, is: typia.is<IMember>(member) })
+console.log(is({ name: 'hi' })); // true
+console.log(is({ name: 34 })); // false
 
-console.log({
-  random: typia.random<IMember>(),
-})
+console.log(typia.json.assertParse<Obj>(jsonSample)) // { name: "jsonup" }
+console.log(typia.json.assertParse<Obj>(`{ "name": 34 }`)) // throws an error
