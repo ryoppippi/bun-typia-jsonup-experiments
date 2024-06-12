@@ -12,4 +12,12 @@ console.log(is({ name: 'hi' })); // true
 console.log(is({ name: 34 })); // false
 
 console.log(typia.json.assertParse<Obj>(jsonSample)) // { name: "jsonup" }
-console.log(typia.json.assertParse<Obj>(`{ "name": 34 }`)) // throws an error
+
+try {
+  console.log(typia.json.assertParse<Obj>(`{ "name": 34 }`)) // throws an error
+} catch(e: any) {
+  console.log({
+    message: e.message,
+    path : e.path,
+  }) // "Expected string at name, got number"
+}
