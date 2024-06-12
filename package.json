@@ -6,6 +6,7 @@
     "dev": "bun run --watch ./index.ts",
     "start": "bun run ./index.ts",
     "build": "bun run build.ts",
+    "run": "node ./out/index.js",
     "prepare": "ts-patch install && typia patch"
   },
   "devDependencies": {
