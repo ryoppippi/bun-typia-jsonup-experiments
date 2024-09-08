@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@ryoppippi/unplugin-typia": "npm:@jsr/ryoppippi__unplugin-typia",
+    "@tani/jsonup": "npm:@jsr/tani__jsonup",
     "@types/bun": "latest",
     "ts-patch": "^3.2.0"
   },

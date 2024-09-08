@@ -1,5 +1,5 @@
 import typia from "typia"
-import type { ObjectLike } from 'jsonup'
+import type { ObjectLike } from '@tani/jsonup'
 
 const jsonSample = `{ "name": "jsonup" }`;
 
